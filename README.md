@@ -60,7 +60,7 @@ val antiqueWhite = X11.AntiqueWhite
 
 #### Advanced Usage
 
-If desired, I offer some `*palette` modules that offer string names, enums and groups.
+If desired, I offer `*-palette` modules that offer string names, enums and groups.
 
 ```kotlin
 
