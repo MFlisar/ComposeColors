@@ -56,10 +56,6 @@ kotlin {
     @OptIn(ExperimentalWasmDsl::class)
     wasmJs { browser() }
 
-    // linux
-    linuxX64()
-    linuxArm64()
-
     // -------
     // Sources
     // -------
