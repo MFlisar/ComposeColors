@@ -10,15 +10,15 @@ A simple collection of colors that can be used inside any KMP Compose project.
 
 ## :heavy_check_mark: Features
 
-This library simple defines color constants based on `MaterialColors` or on commonly used `HTML color names`.
+This library simple defines color constants for all `MaterialColors` or all `X11 colors`.
 
 **All features are splitted into separate modules, just include the modules you want to use!**
 
 ## :camera: Screenshots
 
-| ![Demo](screenshots/material-colors.png "Material Colors") | ![Demo](screenshots/material-colors.png "HTML Colors") |
-|:----------------------------------------------------------:|:------------------------------------------------------:|
-|                      Material Colors                       |                      HTML Colors                       |
+|    ![Demo](screenshots/material.png "Material Colors")    | ![Demo](screenshots/x11.png "X11 Colors") |
+|:---------------------------------------------------------:|:-----------------------------------------:|
+|                      Material Colors                      |                X11 Colors                 |
 
 ## :elephant: Gradle
 
@@ -30,15 +30,20 @@ This library is distributed via [maven central](https://central.sonatype.com/).
 val composecolors = "<LATEST-VERSION>"
 
 implementation("io.github.mflisar.composecolors:material:$composecolors")
-implementation("io.github.mflisar.composecolors:html:$composecolors")
+implementation("io.github.mflisar.composecolors:x11:$composecolors")
 ```
 
 ## </> Usage
 
 ```kotlin
-// access any of the Material Colors
+
 // returns instance of `androidx.compose.ui.graphics.Color`
+
+// Material Colors
 val red500 = MaterialColor.Red500
+
+// X11 Colors
+val aliceBlue = X11.AliceBlue
 ```
 
 ## :computer: Supported Platforms
@@ -47,7 +52,7 @@ val red500 = MaterialColor.Red500
 
 This is a **KMP (kotlin multiplatform)** library and the provided modules do support following platforms:
 
-| Modules                 | Android | iOS | jvm | Information |
-|:------------------------|---------|-----|-----|-------------|
-| material                | √       | √   | √   |             |
-| html                    | √       | √   | √   |             |
+| Modules  | Android | iOS | jvm | Information |
+|:---------|---------|-----|-----|-------------|
+| material | √       | √   | √   |             |
+| x11      | √       | √   | √   |             |
