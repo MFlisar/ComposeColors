@@ -40,25 +40,6 @@ implementation("io.github.mflisar.composecolors:x11-palette:$composecolors")
 
 ## </> Usage
 
-```kotlin
-
-// returns instance of `androidx.compose.ui.graphics.Color`
-
-// Material Colors
-val red500 = MaterialColor.Red500
-val blue500 = MaterialColor.Blue500
-// ...
-
-// X11 Colors
-val aliceBlue = X11.AliceBlue
-val antiqueWhite = X11.AntiqueWhite
-// ...
-
-
-```
-
-## </> Usage
-
 #### Basic Usage
 
 ```kotlin
