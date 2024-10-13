@@ -2,6 +2,7 @@ import com.vanniktech.maven.publish.JavadocJar
 import com.vanniktech.maven.publish.KotlinMultiplatform
 import com.vanniktech.maven.publish.SonatypeHost
 import org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi
+import org.jetbrains.kotlin.gradle.ExperimentalWasmDsl
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 
 plugins {
@@ -47,6 +48,17 @@ kotlin {
     iosArm64()
     iosX64()
     iosSimulatorArm64()
+
+    // js
+    js(IR) {
+        browser()
+    }
+    @OptIn(ExperimentalWasmDsl::class)
+    wasmJs { browser() }
+
+    // linux
+    linuxX64()
+    linuxArm64()
 
     // -------
     // Sources

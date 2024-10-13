@@ -52,7 +52,7 @@ val aliceBlue = X11.AliceBlue
 
 This is a **KMP (kotlin multiplatform)** library and the provided modules do support following platforms:
 
-| Modules  | Android | iOS | jvm | Information |
-|:---------|---------|-----|-----|-------------|
-| material | √       | √   | √   |             |
-| x11      | √       | √   | √   |             |
+| Modules  | Android | iOS | jvm | js | Linux |
+|:---------|---------|-----|-----|----|-------|
+| material | √       | √   | √   | √  | √     |
+| x11      | √       | √   | √   | √  | √     |
