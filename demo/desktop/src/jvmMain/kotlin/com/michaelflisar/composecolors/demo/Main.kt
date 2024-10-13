@@ -18,7 +18,10 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.luminance
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.Dp
+import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.window.Window
@@ -28,6 +31,7 @@ import androidx.compose.ui.window.rememberWindowState
 import com.michaelflisar.composecolors.ColorPalette
 import com.michaelflisar.composecolors.material.MaterialColor
 import com.michaelflisar.composecolors.material.palette.Palette
+import com.michaelflisar.composecolors.x11.X11Color
 import com.michaelflisar.composecolors.x11.palette.Palette
 
 fun main() {
@@ -46,6 +50,16 @@ fun main() {
             val palette = MaterialColor.Palette
             val cellSize = if (palette == MaterialColor.Palette) 32.dp else 48.dp
             val columns = if (palette == MaterialColor.Palette) 14 else 10
+            val textSize = if (palette == MaterialColor.Palette) 12.sp else 14.sp
+            val textProvider = if (palette == MaterialColor.Palette) {
+                { group: String?, color: com.michaelflisar.composecolors.Color ->
+                    color.name.replace(group!!.replace(" ", ""), "")
+                }
+            } else {
+                { group: String?, color: com.michaelflisar.composecolors.Color ->
+                    color.name
+                }
+            }
 
             Column(
                 modifier = Modifier
@@ -57,12 +71,13 @@ fun main() {
                     is ColorPalette.Definition -> {
                         val colors = palette.colors.chunked(columns)
                         colors.forEach {
-                            ColorRow(null, it, columns, cellSize)
+                            ColorRow(null, it, columns, cellSize, textSize, textProvider)
                         }
                     }
+
                     is ColorPalette.Grouped -> {
                         palette.groups.forEach {
-                            ColorRow(it.name, it.colors, columns, cellSize)
+                            ColorRow(it.name, it.colors, columns, cellSize, textSize, textProvider)
                         }
                     }
                 }
@@ -76,7 +91,9 @@ fun ColorRow(
     name: String?,
     colors: List<com.michaelflisar.composecolors.Color>,
     columns: Int,
-    cellSize: Dp
+    cellSize: Dp,
+    textSize: TextUnit,
+    textProvider: (group: String?, com.michaelflisar.composecolors.Color) -> String
 ) {
     Row(
         modifier = Modifier.height(cellSize),
@@ -87,11 +104,11 @@ fun ColorRow(
             Text(text = name, modifier = Modifier.width(100.dp))
         }
         colors.forEach {
-            ColorCell(Modifier.weight(1f), it.color, it.name)
+            ColorCell(Modifier.weight(1f), it.color, textProvider(name, it), textSize)
 
         }
         for (i in colors.size..<columns) {
-            ColorCell(Modifier.weight(1f), Color.Transparent, "")
+            ColorCell(Modifier.weight(1f), Color.Transparent, "", textSize)
         }
     }
 }
@@ -100,15 +117,17 @@ fun ColorRow(
 fun ColorCell(
     modifier: Modifier,
     color: Color,
-    name: String
+    name: String,
+    textSize: TextUnit
 ) {
     Box(
         modifier = modifier
             .fillMaxSize()
             .clip(MaterialTheme.shapes.small)
-            .background(color),
+            .background(color)
+            .padding(2.dp),
         contentAlignment = Alignment.Center
     ) {
-        Text(name, fontSize = 8.sp)
+        Text(name, fontSize = textSize, textAlign = TextAlign.Center, color = if (color.luminance() <= .2f) Color.White else Color.Black)
     }
 }
