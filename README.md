@@ -18,6 +18,7 @@ This library simple defines color constants based on `MaterialColors` or on comm
 
 | ![Demo](screenshots/material-colors.png "Material Colors") | ![Demo](screenshots/material-colors.png "HTML Colors") |
 |:----------------------------------------------------------:|:------------------------------------------------------:|
+|                      Material Colors                       |                      HTML Colors                       |
 
 ## :elephant: Gradle
 
