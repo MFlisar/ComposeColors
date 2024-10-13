@@ -29,8 +29,13 @@ This library is distributed via [maven central](https://central.sonatype.com/).
 ```kts
 val composecolors = "<LATEST-VERSION>"
 
+// Definitions of all color constants
 implementation("io.github.mflisar.composecolors:material:$composecolors")
 implementation("io.github.mflisar.composecolors:x11:$composecolors")
+
+// Definition of Palettes for easy iterations and string names
+implementation("io.github.mflisar.composecolors:material-palette:$composecolors")
+implementation("io.github.mflisar.composecolors:x11-palette:$composecolors")
 ```
 
 ## </> Usage
@@ -41,9 +46,66 @@ implementation("io.github.mflisar.composecolors:x11:$composecolors")
 
 // Material Colors
 val red500 = MaterialColor.Red500
+val blue500 = MaterialColor.Blue500
+// ...
 
 // X11 Colors
 val aliceBlue = X11.AliceBlue
+val antiqueWhite = X11.AntiqueWhite
+// ...
+
+
+```
+
+## </> Usage
+
+#### Basic Usage
+
+```kotlin
+
+// returns instance of `androidx.compose.ui.graphics.Color`
+
+// Material Colors
+val red500 = MaterialColor.Red500
+val blue500 = MaterialColor.Blue500
+// ...
+
+// X11 Colors
+val aliceBlue = X11.AliceBlue
+val antiqueWhite = X11.AntiqueWhite
+// ...
+
+```
+
+#### Advanced Usage
+
+If desired, I offer some `*palette` modules that offer string names, enums and groups.
+
+```kotlin
+
+val palette = MaterialColor.Palette
+when (palette) {
+    is ColorPalette.Definition -> {
+        // this palette does simple provide you a list of all available colors
+        val paletteName: String = palette.name
+        palette.colors.forEach {
+            val colorName: String = it.name // e.g. AliceBlue, AntiqueWhite, Aqua, ...
+            val color: Color = it.color
+            // ...
+        }
+    }
+    is ColorPalette.Grouped -> {
+        val paletteName: String = palette.name
+        palette.groups.forEach {
+            val groupName: String = it.name // e.g. Red, Green, Blue, ...
+            it.colors.forEach {
+                val colorName: String = it.name  // e.g. Red500, Blue500, ...
+                val color: Color = it.color
+                // ...
+            }
+        }
+    }
+}
 ```
 
 ## :computer: Supported Platforms
@@ -56,3 +118,7 @@ This is a **KMP (kotlin multiplatform)** library and the provided modules do sup
 |:---------|---------|-----|-----|----|
 | material | √       | √   | √   | √  |
 | x11      | √       | √   | √   | √  |
+
+## :tada: Demo
+
+A full [demo](demo) is included inside the demo module, it shows nearly every usage with working examples.

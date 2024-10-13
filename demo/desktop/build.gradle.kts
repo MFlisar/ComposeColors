@@ -21,8 +21,8 @@ kotlin {
                 implementation(project(":ComposeColors:Material"))
                 implementation(project(":ComposeColors:X11"))
 
-                // Reflection to get a list of all colors for demo purposes
-                implementation(kotlin("reflect"))
+                implementation(project(":ComposeColors:MaterialPalette"))
+                implementation(project(":ComposeColors:X11Palette"))
             }
         }
     }

@@ -25,11 +25,10 @@ import androidx.compose.ui.window.Window
 import androidx.compose.ui.window.WindowPosition
 import androidx.compose.ui.window.application
 import androidx.compose.ui.window.rememberWindowState
+import com.michaelflisar.composecolors.ColorPalette
 import com.michaelflisar.composecolors.material.MaterialColor
-import com.michaelflisar.composecolors.x11.X11Color
-import kotlin.reflect.KVisibility
-import kotlin.reflect.full.memberProperties
-
+import com.michaelflisar.composecolors.material.palette.Palette
+import com.michaelflisar.composecolors.x11.palette.Palette
 
 fun main() {
 
@@ -44,31 +43,9 @@ fun main() {
                 height = 600.dp
             )
         ) {
-            val colors: Any = MaterialColor
-            val colorNames = if (colors is MaterialColor) listOf(
-                "Red",
-                "Pink",
-                "Purple",
-                "DeepPurple",
-                "Indigo",
-                "Blue",
-                "LightBlue",
-                "Cyan",
-                "Teal",
-                "Green",
-                "LightGreen",
-                "Lime",
-                "Yellow",
-                "Amber",
-                "Orange",
-                "DeepOrange",
-                "Brown",
-                "Gray",
-                "BlueGray",
-                "B/W"
-            ) else null
-            val cellSize = if (colors is MaterialColor) 32.dp else 48.dp
-            val columns = if (colors is MaterialColor) 14 else 10
+            val palette = MaterialColor.Palette
+            val cellSize = if (palette == MaterialColor.Palette) 32.dp else 48.dp
+            val columns = if (palette == MaterialColor.Palette) 14 else 10
 
             Column(
                 modifier = Modifier
@@ -76,28 +53,17 @@ fun main() {
                     .verticalScroll(rememberScrollState()),
                 verticalArrangement = Arrangement.spacedBy(4.dp)
             ) {
-                val list: ArrayList<Pair<Color, String>> = ArrayList()
-                colors::class.memberProperties.forEach {
-                    if (it.visibility == KVisibility.PUBLIC) {
-                        list.add(Pair(it.getter.call(colors) as Color, it.name))
-                    }
-                }
-
-                if (colorNames == null) {
-                    val colors = list.chunked(columns)
-                    colors.forEach {
-                        ColorRow(null, it, columns, cellSize)
-                    }
-                } else {
-
-                    colorNames.forEach { name ->
-                        val filtered = if (name == colorNames.last()) {
-                            list.filter { it.second == "Black" || it.second == "White" }
-                        } else list.filter {
-                            it.second.filter { it.isLetter() } == name ||
-                                    it.second.filter { it.isLetter() } == "${name}A"
+                when (palette) {
+                    is ColorPalette.Definition -> {
+                        val colors = palette.colors.chunked(columns)
+                        colors.forEach {
+                            ColorRow(null, it, columns, cellSize)
                         }
-                        ColorRow(name, filtered, columns, cellSize)
+                    }
+                    is ColorPalette.Grouped -> {
+                        palette.groups.forEach {
+                            ColorRow(it.name, it.colors, columns, cellSize)
+                        }
                     }
                 }
             }
@@ -108,7 +74,7 @@ fun main() {
 @Composable
 fun ColorRow(
     name: String?,
-    colors: List<Pair<Color, String>>,
+    colors: List<com.michaelflisar.composecolors.Color>,
     columns: Int,
     cellSize: Dp
 ) {
@@ -121,7 +87,7 @@ fun ColorRow(
             Text(text = name, modifier = Modifier.width(100.dp))
         }
         colors.forEach {
-            ColorCell(Modifier.weight(1f), it.first, it.second)
+            ColorCell(Modifier.weight(1f), it.color, it.name)
 
         }
         for (i in colors.size..<columns) {
