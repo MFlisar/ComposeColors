@@ -20,6 +20,14 @@ This library simple defines color constants for all `MaterialColors` or all `X11
 |:---------------------------------------------------------:|:-----------------------------------------:|
 |                      Material Colors                      |                X11 Colors                 |
 
+## :link: Dependencies
+
+|      Dependency       | Version  |
+|:---------------------:|:--------:|
+| Compose Multiplatform | `1.7.0`* |
+
+* based on compose `1.7.1` and material3 `1.3.0`
+
 ## :elephant: Gradle
 
 This library is distributed via [maven central](https://central.sonatype.com/).

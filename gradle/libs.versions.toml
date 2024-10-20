@@ -1,8 +1,8 @@
 [versions]
 
 gradle = 				        "8.5.2"
-kotlin = 				        "2.0.20"
-compose =                       "1.6.11"
+kotlin = 				        "2.0.21"
+compose =                       "1.7.0"
 dokka =                         "1.9.20"
 gradle-maven-publish-plugin =   "0.29.0"
 
