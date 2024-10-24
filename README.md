@@ -1,6 +1,6 @@
 [![Maven](https://img.shields.io/maven-central/v/io.github.mflisar.composecolors/core?style=for-the-badge&color=blue)](https://central.sonatype.com/namespace/io.github.mflisar.composecolors)
 [![API](https://img.shields.io/badge/api-21%2B-brightgreen.svg?style=for-the-badge)](https://android-arsenal.com/api?level=21)
-[![Kotlin](https://img.shields.io/github/languages/top/mflisar/kotpreferences.svg?style=for-the-badge&color=blueviolet)](https://kotlinlang.org/)
+[![Kotlin](https://img.shields.io/github/languages/top/mflisar/composecolors.svg?style=for-the-badge&color=blueviolet)](https://kotlinlang.org/)
 [![KMP](https://img.shields.io/badge/Kotlin_Multiplatform-blue?style=for-the-badge&label=Kotlin)](https://kotlinlang.org/docs/multiplatform.html)
 [![License](https://img.shields.io/github/license/MFlisar/ComposeColors?style=for-the-badge)](LICENSE)
 

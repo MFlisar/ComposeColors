@@ -18,6 +18,7 @@ plugins {
 
 // Module
 val artifactId = "x11-palette"
+val androidNamespace = "com.michaelflisar.composecolors.x11.palette"
 
 // Library 
 val libraryName = "ComposeColors"
@@ -79,7 +80,7 @@ kotlin {
 }
 
 android {
-    namespace = "com.michaelflisar.composecolors.x11.palette"
+    namespace = androidNamespace
 
     compileSdk = app.versions.compileSdk.get().toInt()
 

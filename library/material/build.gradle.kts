@@ -18,6 +18,7 @@ plugins {
 
 // Module
 val artifactId = "material"
+val androidNamespace = "com.michaelflisar.composecolors.material"
 
 // Library 
 val libraryName = "ComposeColors"
@@ -76,7 +77,7 @@ kotlin {
 }
 
 android {
-    namespace = "com.michaelflisar.composecolors.material"
+    namespace = androidNamespace
 
     compileSdk = app.versions.compileSdk.get().toInt()
 
