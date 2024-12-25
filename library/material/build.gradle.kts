@@ -65,9 +65,6 @@ kotlin {
 
         commonMain.dependencies {
 
-            // Kotlin
-            implementation(libs.kotlin)
-
             // Compose
             implementation(libs.compose.runtime)
             implementation(libs.compose.ui)

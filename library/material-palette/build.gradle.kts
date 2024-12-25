@@ -65,16 +65,13 @@ kotlin {
 
         commonMain.dependencies {
 
-            // Kotlin
-            implementation(libs.kotlin)
-
             // Compose
             implementation(libs.compose.runtime)
             implementation(libs.compose.ui)
 
             // Library
-            api(project(":ComposeColors:Core"))
-            api(project(":ComposeColors:Material"))
+            api(project(":composecolors:core"))
+            api(project(":composecolors:material"))
         }
     }
 }
