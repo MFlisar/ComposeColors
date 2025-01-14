@@ -28,18 +28,18 @@ pluginManagement {
 // Library
 // --------------
 
-include(":ComposeColors:Core")
-project(":ComposeColors:Core").projectDir = file("library/core")
+include(":composecolors:core")
+project(":composecolors:core").projectDir = file("library/core")
 
-include(":ComposeColors:Material")
-project(":ComposeColors:Material").projectDir = file("library/material")
-include(":ComposeColors:MaterialPalette")
-project(":ComposeColors:MaterialPalette").projectDir = file("library/material-palette")
+include(":composecolors:material")
+project(":composecolors:material").projectDir = file("library/material")
+include(":composecolors:materialpalette")
+project(":composecolors:materialpalette").projectDir = file("library/material-palette")
 
-include(":ComposeColors:X11")
-project(":ComposeColors:X11").projectDir = file("library/x11")
-include(":ComposeColors:X11Palette")
-project(":ComposeColors:X11Palette").projectDir = file("library/x11-palette")
+include(":composecolors:x11")
+project(":composecolors:x11").projectDir = file("library/x11")
+include(":composecolors:x11palette")
+project(":composecolors:x11palette").projectDir = file("library/x11-palette")
 
 // Demo App - used for the screenshots
 include(":demo:desktop")

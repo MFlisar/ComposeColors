@@ -18,11 +18,11 @@ kotlin {
 
                 implementation(compose.desktop.currentOs)
 
-                implementation(project(":ComposeColors:Material"))
-                implementation(project(":ComposeColors:X11"))
+                implementation(project(":composecolors:material"))
+                implementation(project(":composecolors:x11"))
 
-                implementation(project(":ComposeColors:MaterialPalette"))
-                implementation(project(":ComposeColors:X11Palette"))
+                implementation(project(":composecolors:materialpalette"))
+                implementation(project(":composecolors:x11palette"))
             }
         }
     }
