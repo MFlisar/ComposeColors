@@ -9,11 +9,20 @@ library:
   maven: io.github.mflisar.composecolors
   maven-main-library: core
   multiplatform: true
-  screenshots:
-    - name: Palettes
+  platforms:
+    - jvm
+    - android
+    - macos
+    - ios
+    - js
+    - wasm
+  screenshots: 
+    - name: material
       images:
-        - ./screenshots/material.png
-        - ./screenshots/x11.png
+        - ./screenshots/material/material.png
+    - name: x11
+      images:
+        - ./screenshots/x11/x11.png
   branch: master
   demo: true
 
@@ -21,75 +30,91 @@ library:
 # Dependencies
 # ------------
 
-# optional
 dependencies:
-  compose:
-    cmp: 1.7.0
-    compose: 1.7.0
-    material3: 1.3.0
-    experimantel: false
+  compose-multiplatform: 1.7.0 # https://github.com/JetBrains/compose-multiplatform/releases
+  jetpack-compose-runtime: 1.7.1 # https://developer.android.com/jetpack/androidx/releases/compose-runtime
+  jetpack-compose-material3: 1.3.0 # https://developer.android.com/jetpack/androidx/releases/compose-material3
+  experimental: false
 
-# -------------
-# Module
-# -------------
+# ------------
+# Groups
+# ------------
 
-# GRUPPEN - optional: nur bei mehreren Modulen benötigt!
 groups:
   - name: core
     label: Core
-    gradle-comment: core 
+    gradle-comment: core
   - name: modules
     label: Modules
-    gradle-comment: modules
+    gradle-comment: Modules
+
+# ------------
+# Modules
+# ------------
 
 modules:
   - name: core
     group: core
-    description: the core module - is always automatically included by any module
+    description: provides all the basic classes
     optional: false
     platforms:
-      android: true
-      ios: true
-      jvm: true
-      info:
+      - jvm
+      - android
+      - macos
+      - ios
+      - js
+      - wasm
+    platforms-info: ""
     dependencies: []
   - name: material
     group: modules
-    description: defines all material colors
+    description: provides constants for all material colors
     optional: true
     platforms:
-      android: true
-      ios: true
-      jvm: true
-      info:
+      - jvm
+      - android
+      - macos
+      - ios
+      - js
+      - wasm
+    platforms-info: ""
     dependencies: []
-  - name: x11
-    group: modules
-    description: defines all x11 colors
-    optional: true
-    platforms:
-      android: true
-      ios: true
-      jvm: true
-      info:
-    dependencies: []  
   - name: material-palette
     group: modules
-    description: defines a palette and groups for the material colors
+    description: provides a palette class for all material colors
     optional: true
     platforms:
-      android: true
-      ios: true
-      jvm: true
-      info:
+      - jvm
+      - android
+      - macos
+      - ios
+      - js
+      - wasm
+    platforms-info: ""
     dependencies: []
   - name: x11
     group: modules
-    description: defines a palette for the x11 colors
+    description: provides constants for all X11 colors
     optional: true
     platforms:
-      android: true
-      ios: true
-      jvm: true
-      info:
+      - jvm
+      - android
+      - macos
+      - ios
+      - js
+      - wasm
+    platforms-info: ""
+    dependencies: []
+  - name: x11-palette
+    group: modules
+    description: provides a palette class for all X11 colors
+    optional: true
+    platforms:
+      - jvm
+      - android
+      - macos
+      - ios
+      - js
+      - wasm
+    platforms-info: ""
     dependencies: []

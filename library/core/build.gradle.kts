@@ -16,18 +16,36 @@ plugins {
 // Informations
 // -------------------
 
+val description = "provides all the basic classes"
+
 // Module
 val artifactId = "core"
 val androidNamespace = "com.michaelflisar.composecolors.core"
 
 // Library 
 val libraryName = "ComposeColors"
-val libraryDescription = "ComposeColors - $artifactId module"
+val libraryDescription = "ComposeColors - $artifactId module - $description"
 val groupID = "io.github.mflisar.composecolors"
 val release = 2024
 val github = "https://github.com/MFlisar/ComposeColors"
 val license = "Apache License 2.0"
 val licenseUrl = "$github/blob/main/LICENSE"
+
+// -------------------
+// Variables for Documentation Generator
+// -------------------
+
+// # DEP + GROUP are optional arrays!
+
+// OPTIONAL = "false"               // defines if this module is optional or not
+// GROUP_ID = "core"                // defines the "grouping" in the documentation this module belongs to
+// #DEP = "deps.composables.core|Compose Unstyled (core)|https://github.com/composablehorizons/compose-unstyled/"
+// PLATFORM_INFO = ""               // defines a comment that will be shown in the documentation for this modules platform support
+
+// GLOBAL DATA
+// BRANCH = "master"        // defines the branch on github (master/main)
+// GROUP = "core|Core|core"
+// GROUP = "modules|Modules|Modules"
 
 // -------------------
 // Setup

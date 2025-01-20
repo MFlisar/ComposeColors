@@ -16,18 +16,32 @@ plugins {
 // Informations
 // -------------------
 
+val description = "provides constants for all X11 colors"
+
 // Module
 val artifactId = "x11"
 val androidNamespace = "com.michaelflisar.composecolors.x11"
 
 // Library 
 val libraryName = "ComposeColors"
-val libraryDescription = "ComposeColors - $artifactId module"
+val libraryDescription = "ComposeColors - $artifactId module - $description"
 val groupID = "io.github.mflisar.composecolors"
 val release = 2024
 val github = "https://github.com/MFlisar/ComposeColors"
 val license = "Apache License 2.0"
 val licenseUrl = "$github/blob/main/LICENSE"
+
+// -------------------
+// Variables for Documentation Generator
+// -------------------
+
+// # DEP is an optional arrays!
+
+// OPTIONAL = "true"                // defines if this module is optional or not
+// GROUP_ID = "modules"             // defines the "grouping" in the documentation this module belongs to
+// #DEP = "deps.kotbilling|KotBilling|https://github.com/MFlisar/Kotbilling"
+// PLATFORM_INFO = ""               // defines a comment that will be shown in the documentation for this modules platform support
+
 
 // -------------------
 // Setup
