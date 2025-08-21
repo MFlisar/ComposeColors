@@ -1,0 +1,4 @@
+public final class com/michaelflisar/composecolors/x11/palette/X11ColorExtensionsKt {
+	public static final fun getPalette (Lcom/michaelflisar/composecolors/x11/X11Color;)Lcom/michaelflisar/composecolors/ColorPalette;
+}
+

@@ -1,0 +1,24 @@
+public final class com/michaelflisar/composecolors/material/palette/MaterialColorExtensionsKt {
+	public static final fun getAmber (Lcom/michaelflisar/composecolors/material/MaterialColor;)Lcom/michaelflisar/composecolors/ColorGroup;
+	public static final fun getBW (Lcom/michaelflisar/composecolors/material/MaterialColor;)Lcom/michaelflisar/composecolors/ColorGroup;
+	public static final fun getBlue (Lcom/michaelflisar/composecolors/material/MaterialColor;)Lcom/michaelflisar/composecolors/ColorGroup;
+	public static final fun getBlueGray (Lcom/michaelflisar/composecolors/material/MaterialColor;)Lcom/michaelflisar/composecolors/ColorGroup;
+	public static final fun getBrown (Lcom/michaelflisar/composecolors/material/MaterialColor;)Lcom/michaelflisar/composecolors/ColorGroup;
+	public static final fun getCyan (Lcom/michaelflisar/composecolors/material/MaterialColor;)Lcom/michaelflisar/composecolors/ColorGroup;
+	public static final fun getDeepOrange (Lcom/michaelflisar/composecolors/material/MaterialColor;)Lcom/michaelflisar/composecolors/ColorGroup;
+	public static final fun getDeepPurple (Lcom/michaelflisar/composecolors/material/MaterialColor;)Lcom/michaelflisar/composecolors/ColorGroup;
+	public static final fun getGray (Lcom/michaelflisar/composecolors/material/MaterialColor;)Lcom/michaelflisar/composecolors/ColorGroup;
+	public static final fun getGreen (Lcom/michaelflisar/composecolors/material/MaterialColor;)Lcom/michaelflisar/composecolors/ColorGroup;
+	public static final fun getIndigo (Lcom/michaelflisar/composecolors/material/MaterialColor;)Lcom/michaelflisar/composecolors/ColorGroup;
+	public static final fun getLightBlue (Lcom/michaelflisar/composecolors/material/MaterialColor;)Lcom/michaelflisar/composecolors/ColorGroup;
+	public static final fun getLightGreen (Lcom/michaelflisar/composecolors/material/MaterialColor;)Lcom/michaelflisar/composecolors/ColorGroup;
+	public static final fun getLime (Lcom/michaelflisar/composecolors/material/MaterialColor;)Lcom/michaelflisar/composecolors/ColorGroup;
+	public static final fun getOrange (Lcom/michaelflisar/composecolors/material/MaterialColor;)Lcom/michaelflisar/composecolors/ColorGroup;
+	public static final fun getPalette (Lcom/michaelflisar/composecolors/material/MaterialColor;)Lcom/michaelflisar/composecolors/ColorPalette;
+	public static final fun getPink (Lcom/michaelflisar/composecolors/material/MaterialColor;)Lcom/michaelflisar/composecolors/ColorGroup;
+	public static final fun getPurple (Lcom/michaelflisar/composecolors/material/MaterialColor;)Lcom/michaelflisar/composecolors/ColorGroup;
+	public static final fun getRed (Lcom/michaelflisar/composecolors/material/MaterialColor;)Lcom/michaelflisar/composecolors/ColorGroup;
+	public static final fun getTeal (Lcom/michaelflisar/composecolors/material/MaterialColor;)Lcom/michaelflisar/composecolors/ColorGroup;
+	public static final fun getYellow (Lcom/michaelflisar/composecolors/material/MaterialColor;)Lcom/michaelflisar/composecolors/ColorGroup;
+}
+

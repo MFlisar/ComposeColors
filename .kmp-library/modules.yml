@@ -1,0 +1,81 @@
+# -----------
+# Module Groups
+# -----------
+
+# optional - remove it if you do not want to group your modules
+# each group has following properties:
+# - id...  the id - only needed to reference this group below inside the modules sections
+# - label... the label of the group - used in the docs tables
+# - gradle-comment... the comment on the gradle setup docs page for this group
+groups:
+  - id: core
+    label: Core
+    gradle-comment: core
+  - id: modules
+    label: Modules
+    gradle-comment: modules
+
+# -----------
+# Modules
+# -----------
+
+# REQUIRED! each module must define its meta data here!
+# each module has following properties:
+# relativePath... the relative path to the project root folder
+# artifact-id... the maven artifact id
+# group... the id of the group this module belongs to (defined above) [OPTIONAL]
+# platforms-info... a string that is displayed inside the docs in the "supported platforms" table in the info column [OPTIONAL]
+#                   IDEE: reference this info inside the parts/index_platform_comments.md
+# dependencies... a list of dependencies this module has (see below for details) [OPTIONAL]
+#    ... name: the name of the dependency - used in the docs tables
+#    ... versions-file... the toml file to load the version from (e.g. deps.versions.toml, ...)
+#    ... versions-key... the key for the versions table in the toml file
+#    ... link: a link to the dependency - used in the docs tables
+modules:
+  - relativePath: library\core
+    artifact-id: core
+    group: core
+    description: provides all the basic classes
+    optional: false
+    platforms-info: ""
+    dependencies: []
+  - relativePath: library\material
+    artifact-id: material
+    group: modules
+    description: provides constants for all material colors
+    optional: true
+    platforms-info: ""
+    dependencies: []
+  - relativePath: library\material-palette
+    artifact-id: material-palette
+    group: modules
+    description: provides a palette class for all material colors
+    optional: true
+    platforms-info: ""
+    dependencies: []
+  - relativePath: library\x11
+    artifact-id: x11
+    group: modules
+    description: provides constants for all x11 colors
+    optional: true
+    platforms-info: ""
+    dependencies: []
+  - relativePath: library\x11-palette
+    artifact-id: x11-palette
+    group: modules
+    description: provides a palette class for all x11 colors
+    optional: true
+    platforms-info: ""
+    dependencies: []
+
+
+
+
+
+
+
+
+
+
+
+

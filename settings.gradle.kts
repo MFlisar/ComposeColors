@@ -11,6 +11,9 @@ dependencyResolutionManagement {
         create("app") {
             from(files("gradle/app.versions.toml"))
         }
+        create("deps") {
+            from(files("gradle/deps.versions.toml"))
+        }
     }
 }
 
@@ -25,21 +28,26 @@ pluginManagement {
 }
 
 // --------------
+// Functions
+// --------------
+
+fun includeModule(path: String, name: String) {
+    include(name)
+    project(name).projectDir = file(path)
+}
+
+// --------------
 // Library
 // --------------
 
-include(":composecolors:core")
-project(":composecolors:core").projectDir = file("library/core")
+includeModule("library/core", ":composecolors:core")
+includeModule("library/material", ":composecolors:material")
+includeModule("library/material-palette", ":composecolors:materialpalette")
+includeModule("library/x11", ":composecolors:x11")
+includeModule("library/x11-palette", ":composecolors:x11palette")
 
-include(":composecolors:material")
-project(":composecolors:material").projectDir = file("library/material")
-include(":composecolors:materialpalette")
-project(":composecolors:materialpalette").projectDir = file("library/material-palette")
+// --------------
+// Demo
+// --------------
 
-include(":composecolors:x11")
-project(":composecolors:x11").projectDir = file("library/x11")
-include(":composecolors:x11palette")
-project(":composecolors:x11palette").projectDir = file("library/x11-palette")
-
-// Demo App - used for the screenshots
 include(":demo:desktop")
