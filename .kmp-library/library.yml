@@ -26,6 +26,7 @@ library:
   license:
     name: Apache License 2.0
     link: https://github.com/MFlisar/ComposeColors/blob/main/LICENSE
+  screenshots:
       - name: Color Palettes
         images:
           - screenshots/material/material.png
