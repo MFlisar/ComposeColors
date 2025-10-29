@@ -26,7 +26,10 @@ library:
   license:
     name: Apache License 2.0
     link: https://github.com/MFlisar/ComposeColors/blob/main/LICENSE
-  screenshots: []
+      - name: Color Palettes
+        images:
+          - screenshots/material/material.png
+          - screenshots/x11/x11.png
   about-me: true # set to true if you want to show the about me section on the homepage
 
 maven:
