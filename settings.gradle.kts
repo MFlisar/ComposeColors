@@ -1,3 +1,5 @@
+import com.michaelflisar.kmpdevtools.core.configs.LibraryConfig
+
 dependencyResolutionManagement {
 
     repositories {
@@ -28,26 +30,29 @@ pluginManagement {
 }
 
 // --------------
-// Functions
+// Settings Plugin
 // --------------
 
-fun includeModule(path: String, name: String) {
-    include(name)
-    project(name).projectDir = file(path)
+plugins {
+    // version catalogue does not work here!
+    id("io.github.mflisar.kmpdevtools.plugins-settings-gradle") version "7.4.1"
 }
+val settingsPlugin = plugins.getPlugin(com.michaelflisar.kmpdevtools.SettingsFilePlugin::class.java)
 
 // --------------
 // Library
 // --------------
 
-includeModule("library/core", ":composecolors:core")
-includeModule("library/material", ":composecolors:material")
-includeModule("library/material-palette", ":composecolors:materialpalette")
-includeModule("library/x11", ":composecolors:x11")
-includeModule("library/x11-palette", ":composecolors:x11palette")
+val libraryConfig = LibraryConfig.read(rootProject)
+val libraryId = libraryConfig.libraryId()
+
+// Library Modules
+settingsPlugin.includeModules(libraryId, libraryConfig, includeDokka = true)
 
 // --------------
-// Demo
+// App
 // --------------
 
-include(":demo:desktop")
+if (System.getenv("CI") != "true") {
+    include(":demo:app:compose")
+}

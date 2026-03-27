@@ -75,6 +75,9 @@ kotlin {
             implementation(libs.jetbrains.compose.runtime)
             implementation(libs.jetbrains.compose.ui)
 
+            // Library
+            api(project(":composecolors:core"))
+            api(project(":composecolors:modules:x11"))
         }
     }
 }

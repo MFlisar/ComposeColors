@@ -1,0 +1,34 @@
+# Github Library
+github:
+  name: ComposeColors
+  release: 2021
+  namespace: com.michaelflisar.composecolors
+  license:
+    name: Apache License 2.0
+    path: blob/main/LICENSE
+
+# Maven
+maven:
+  group-id: io.github.mflisar.composecolors
+  primary-artifact-id: core # used to detect latest release version of the library (dynamically on the published homepage)
+
+# Modules - list of modules [artifact-id, description, path]
+modules:
+  - artifact-id: core
+    description: provides all the basic classes
+    path: library/core
+  - artifact-id: material
+    description: provides constants for all material colors
+    path: library/modules/material
+  - artifact-id: material-palette
+    description: provides a palette class for all material colors
+    path: library/modules/material-palette
+  - artifact-id: x11
+    description: provides constants for all x11 colors
+    path: library/modules/x11
+  - artifact-id: x11-palette
+    description: provides a palette class for all x11 colors
+    path: library/modules/x11-palette
+
+# XCFrameworks [name, path, targets (ios, macos)]
+xcframeworks: [ ]
