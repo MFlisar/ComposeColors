@@ -1,12 +1,8 @@
 import com.michaelflisar.kmpdevtools.Targets
 import com.michaelflisar.kmpdevtools.BuildFileUtil
 import com.michaelflisar.kmpdevtools.core.Platform
-import com.michaelflisar.kmpdevtools.configs.library.AndroidLibraryConfig
-import com.michaelflisar.kmpdevtools.configs.app.DesktopAppConfig
-import com.michaelflisar.kmpdevtools.configs.app.WasmAppConfig
-import com.michaelflisar.kmpdevtools.core.configs.AppConfig
-import com.michaelflisar.kmpdevtools.core.configs.Config
-import com.michaelflisar.kmpdevtools.core.configs.LibraryConfig
+import com.michaelflisar.kmpdevtools.configs.*
+import com.michaelflisar.kmpdevtools.setupDependencies
 
 plugins {
     // kmp + app/library
@@ -19,7 +15,7 @@ plugins {
     // docs, publishing, validation
     // --
     // build tools
-    alias(deps.plugins.kmpdevtools.buildplugin)
+    alias(mflisar.plugins.kmpdevtools.buildplugin)
     // others
     // ...
 }
@@ -28,9 +24,7 @@ plugins {
 // Setup
 // ------------------------
 
-val config = Config.read(rootProject)
-val libraryConfig = LibraryConfig.read(rootProject)
-val appConfig = AppConfig.read(rootProject)
+val module = AppModuleConfig.readManual(project)
 
 val buildTargets = Targets(
     // mobile
@@ -54,7 +48,7 @@ kotlin {
     // Targets
     //-------------
 
-    buildTargets.setupTargetsApp(project)
+    buildTargets.setupTargetsApp(module)
 
     // -------
     // Sources
@@ -103,10 +97,8 @@ kotlin {
 compose.desktop {
     application {
         BuildFileUtil.setupWindowsApp(
-            project = project,
-            config = config,
+            appModuleConfig = module,
             application = this,
-            appConfig = appConfig,
             desktopAppConfig = desktopConfig
         )
     }
