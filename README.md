@@ -20,25 +20,34 @@ This library offers you **compose color definitions** and optionally also palett
 
 # :camera: Screenshots
 
-![x11](documentation/screenshots/x11/x11.png)
-![material](documentation/screenshots/material/material.png)
+### material
+
+|  |  |  |
+|---|---|---|
+| ![material](documentation/screenshots/material/material.png) |
+
+### x11
+
+|  |  |  |
+|---|---|---|
+| ![x11](documentation/screenshots/x11/x11.png) |
 
 # :computer: Supported Platforms
 
-| Module | android | iOS | windows | macOS | wasm |
-|---|---|---|---|---|---|
-| core | ✅ | ✅ | ✅ | ✅ | ✅ |
-| material | ✅ | ✅ | ✅ | ✅ | ✅ |
-| material-palette | ✅ | ✅ | ✅ | ✅ | ✅ |
-| x11 | ✅ | ✅ | ✅ | ✅ | ✅ |
-| x11-palette | ✅ | ✅ | ✅ | ✅ | ✅ |
+| Module | android | iOS | windows | macOS | wasm | Notes |
+|---|---|---|---|---|---|---|
+| core | ✅ | ✅ | ✅ | ✅ | ✅ | provides all the basic classes |
+| material | ✅ | ✅ | ✅ | ✅ | ✅ | provides constants for all material colors |
+| material-palette | ✅ | ✅ | ✅ | ✅ | ✅ | provides a palette class for all material colors |
+| x11 | ✅ | ✅ | ✅ | ✅ | ✅ | provides constants for all x11 colors |
+| x11-palette | ✅ | ✅ | ✅ | ✅ | ✅ | provides a palette class for all x11 colors |
 
 # :arrow_right: Versions
 
 | Dependency | Version |
 |---|---|
-| Kotlin | `2.3.20` |
-| Jetbrains Compose | `1.10.3` |
+| Kotlin | `2.4.0` |
+| Jetbrains Compose | `1.11.1` |
 | Jetbrains Compose Material3 | `1.9.0` |
 
 # :wrench: Setup
